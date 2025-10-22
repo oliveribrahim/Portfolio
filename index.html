@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portfolio of Oliver Ibrahim – Full-Stack Web Developer (Laravel, PHP, WordPress)">
+    <title>Oliver Ibrahim | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#about" aria-label="Skip to content">Skip to content</a>
+
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a href="#top" class="logo" aria-label="Oliver Ibrahim Home">
+          <span class="logo__mark">OI</span>
+          <span class="logo__text">Oliver Ibrahim</span>
+        </a>
+
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+
+        <nav id="siteNav" class="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero / Intro -->
+      <section class="hero" aria-labelledby="intro-title">
+        <div class="container hero__grid">
+          <div class="hero__content reveal">
+            <h1 id="intro-title">Hi, I’m <span class="accent">Oliver Ibrahim</span></h1>
+            <p class="hero__subtitle">Full-Stack Web Developer Intern — Cairo, Egypt</p>
+            <p class="hero__desc">
+              Motivated developer with hands-on experience in Laravel, PHP, and WordPress. I focus on building
+              responsive, secure, and user-friendly web applications, and I thrive in collaborative, learning-driven teams.
+            </p>
+            <div class="hero__cta">
+              <a class="btn btn--primary" href="#projects">View Projects</a>
+              <a class="btn btn--cv" href="https://drive.google.com/file/d/1AdIh1_g8-jRtrJAbsgRcB79Ialvuj7tr/view?usp=drive_link" target="_blank" rel="noopener">Download CV</a>
+              <a class="btn btn--ghost" href="#contact">Contact Me</a>
+            </div>
+            <ul class="social" aria-label="Social links">
+              <li>
+                <a href="https://linkedin.com/in/oliver-ibrahim-61b5022b5" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <!-- LinkedIn Icon -->
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6C1.12 6 0 4.88 0 3.5C0 2.12 1.12 1 2.5 1C3.88 1 4.98 2.12 4.98 3.5Z" fill="currentColor"/>
+                    <path d="M0.22 8.33997H4.78V22.0001H0.22V8.33997Z" fill="currentColor"/>
+                    <path d="M8.56006 8.33997H13.0001V10.12H13.0601C13.68 8.94 15.2 7.7 17.48 7.7C22.22 7.7 23.0001 10.82 23.0001 14.66V22.0001H18.4401V15.6C18.4401 14.08 18.4201 12.12 16.3401 12.12C14.2401 12.12 13.9201 13.8 13.9201 15.48V22.0001H9.36006V8.33997H8.56006Z" fill="currentColor"/>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/oliveribrahim" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <!-- GitHub Icon -->
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M12 2C6.48 2 2 6.58 2 12.26C2 16.74 4.87 20.52 8.84 21.96C9.34 22.05 9.52 21.74 9.52 21.46C9.52 21.22 9.51 20.58 9.51 19.8C7 20.31 6.35 18.86 6.35 18.86C5.9 17.75 5.2 17.46 5.2 17.46C4.22 16.82 5.27 16.84 5.27 16.84C6.34 16.92 6.9 17.96 6.9 17.96C7.86 19.66 9.45 19.16 10.06 18.89C10.15 18.19 10.43 17.7 10.74 17.43C8.62 17.16 6.39 16.31 6.39 12.64C6.39 11.58 6.76 10.72 7.38 10.06C7.28 9.79 6.94 8.74 7.48 7.3C7.48 7.3 8.29 7.01 9.5 7.98C10.27 7.76 11.1 7.65 11.93 7.65C12.76 7.65 13.59 7.76 14.36 7.98C15.57 7.01 16.38 7.3 16.38 7.3C16.92 8.74 16.58 9.79 16.48 10.06C17.1 10.72 17.47 11.58 17.47 12.64C17.47 16.32 15.23 17.16 13.1 17.43C13.49 17.76 13.83 18.44 13.83 19.49C13.83 20.97 13.81 21.15 13.81 21.46C13.81 21.74 13.99 22.06 14.49 21.96C18.46 20.52 21.33 16.74 21.33 12.26C21.33 6.58 16.85 2 11.33 2H12Z" fill="currentColor"/>
+                  </svg>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:oliveribrahim21@gmail.com" aria-label="Email">
+                  <!-- Mail Icon -->
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2"/>
+                    <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="hero__aside reveal">
+            <div class="profile-image">
+              <img src="oliver.jpeg" alt="Oliver Ibrahim - Full-Stack Web Developer" />
+            </div>
+            <ul class="meta">
+              <li><strong>Location:</strong> Cairo, Egypt</li>
+              <li><strong>Phone:</strong> <a href="tel:01274792113">01274792113</a></li>
+              <li><strong>Email:</strong> <a href="mailto:oliveribrahim21@gmail.com">oliveribrahim21@gmail.com</a></li>
+              <li><strong>Military Status:</strong> Completed</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="section" aria-labelledby="about-title">
+        <div class="container">
+          <h2 id="about-title" class="section__title reveal">About</h2>
+          <p class="section__lead reveal">
+            I’m a Full-Stack Web Developer Intern with a passion for creating responsive, secure, and
+            user-friendly applications. With a foundation in Laravel, PHP, and WordPress, I continuously
+            improve my skills while collaborating with teams to ship high-quality software.
+          </p>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="section" aria-labelledby="skills-title">
+        <div class="container">
+          <h2 id="skills-title" class="section__title reveal">Skills</h2>
+          <div class="skills-grid reveal">
+            <div class="card">
+              <h3>Languages</h3>
+              <ul class="tags">
+                <li>PHP</li>
+                <li>JavaScript (ES6+)</li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>Java</li>
+                <li>C#</li>
+                <li>Dart</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Frameworks & Tools</h3>
+              <ul class="tags">
+                <li>Laravel</li>
+                <li>WordPress</li>
+                <li>Spring Boot</li>
+                <li>Flutter</li>
+                <li>Tailwind CSS</li>
+                <li>Git & GitHub</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Databases</h3>
+              <ul class="tags">
+                <li>MySQL</li>
+                <li>Firebase</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3>Concepts & Design</h3>
+              <ul class="tags">
+                <li>OOP</li>
+                <li>Responsive Design</li>
+                <li>Agile</li>
+                <li>Figma</li>
+                <li>Photoshop</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="section" aria-labelledby="exp-title">
+        <div class="container">
+          <h2 id="exp-title" class="section__title reveal">Experience</h2>
+          <div class="timeline">
+            <article class="timeline__item reveal">
+              <header class="timeline__header">
+                <h3>Web Developer Intern — X-TND</h3>
+                <span class="time">Aug 2025 – Present</span>
+              </header>
+              <ul>
+                <li>Build web apps with Laravel, WordPress, and Shopify focusing on responsiveness and functionality.</li>
+                <li>Collaborate with teams to enhance code quality and open-source projects.</li>
+              </ul>
+            </article>
+
+
+            <article class="timeline__item reveal">
+              <header class="timeline__header">
+                <h3>Application Support — Cyrus Technology</h3>
+                <span class="time">Jun 2025 – Aug 2025</span>
+              </header>
+              <ul>
+                <li>Supported tax application users, fixed bugs, and collaborated with developers for solutions.</li>
+              </ul>
+            </article>
+
+            <article class="timeline__item reveal">
+              <header class="timeline__header">
+                <h3>IT Support & Graphic Designer — Pixel Led</h3>
+                <span class="time">Mar 2025 – Jun 2025</span>
+              </header>
+              <ul>
+                <li>Designed professional layouts and promotional materials using Photoshop & Illustrator.</li>
+                <li>Provided IT support and troubleshooting for hardware/software.</li>
+              </ul>
+            </article>
+
+            <article class="timeline__item reveal">
+              <header class="timeline__header">
+                <h3>Sales Representative — MA Group</h3>
+                <span class="time">Dec 2021 – Aug 2024</span>
+              </header>
+              <ul>
+                <li>Developed client relationships, met sales targets, and proposed tailored software solutions.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section id="education" class="section" aria-labelledby="edu-title">
+        <div class="container">
+          <h2 id="edu-title" class="section__title reveal">Education</h2>
+          <div class="card reveal">
+            <h3>B.Sc. in Computer Science — Thebes Academy</h3>
+            <p>Graduated 2023, Grade: B</p>
+            <p><strong>Graduation Project:</strong> Mobile App for Visually Impaired Users (Dart, Flutter, Firebase, Figma, GitHub).</p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Projects -->
+      <section id="projects" class="section" aria-labelledby="projects-title">
+        <div class="container">
+          <h2 id="projects-title" class="section__title reveal">Projects</h2>
+          <div class="projects-grid" aria-live="polite">
+            <article class="project-card project-card--vibrant reveal">
+              <div class="project-card__thumb" aria-hidden="true" style="--thumb-image: url('omnifood.png')">
+                <span class="project-card__label">Omnifood</span>
+              </div>
+              <div class="project-card__body">
+                <p class="project-card__desc">Omnifood is a modern web application designed for food lovers and restaurants. The project provides an easy, fast, and user-friendly way for customers to browse meals, add them to their cart, and place orders online.</p>
+                <div class="project-card__meta">
+                  <span class="badge">HTML</span>
+                  <span class="badge">CSS</span>
+                  <span class="badge">JavaScript</span>
+                </div>
+                <div class="project-card__actions">
+                  <a class="btn btn--primary" target="_blank" rel="noopener" href="https://omnifood-oliver10.netlify.app/">Live</a>
+                  <a class="btn btn--ghost" target="_blank" rel="noopener" href="https://github.com/oliveribrahim/Omnifood">GitHub</a>
+                </div>
+              </div>
+            </article>
+            
+            <article class="project-card project-card--vibrant reveal">
+              <div class="project-card__thumb" aria-hidden="true" style="--thumb-image: url('es.png'); background-size: auto; background-position: center; background-repeat: repeat;">
+                <span class="project-card__label">E-Street</span>
+              </div>
+              <div class="project-card__body">
+                <p class="project-card__desc">E-Street is a modern editorial/news website built with Tailwind CSS. This project demonstrates responsive design principles and modern front-end development practices for news and editorial content.</p>
+                <div class="project-card__meta">
+                  <span class="badge">HTML</span>
+                  <span class="badge">CSS</span>
+                  <span class="badge">Tailwind</span>
+                </div>
+                <div class="project-card__actions">
+                  <a class="btn btn--primary" target="_blank" rel="noopener" href="https://egypt-street.netlify.app/">Live</a>
+                  <a class="btn btn--ghost" target="_blank" rel="noopener" href="https://github.com/oliveribrahim/E-street">GitHub</a>
+                </div>
+              </div>
+            </article>
+            
+            <article class="project-card project-card--vibrant reveal">
+              <div class="project-card__thumb" aria-hidden="true" style="--thumb-image: url('img/natours.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+                <span class="project-card__label">Natours</span>
+              </div>
+              <div class="project-card__body">
+                <p class="project-card__desc">Natours is a modern, responsive website for a fictional nature tours company. It showcases advanced CSS and Sass techniques, animations, and responsive layouts. The project demonstrates the use of Flexbox, Grid, and advanced SCSS architecture to build a professional and visually appealing landing page.</p>
+                <div class="project-card__meta">
+                  <span class="badge">HTML</span>
+                  <span class="badge">CSS</span>
+                  <span class="badge">Sass</span>
+                </div>
+                <div class="project-card__actions">
+                  <a class="btn btn--primary" target="_blank" rel="noopener" href="https://natours-x-tnd.netlify.app/">Live</a>
+                  <a class="btn btn--ghost" target="_blank" rel="noopener" href="https://github.com/oliveribrahim/Natours">GitHub</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Certifications -->
+      <section id="certifications" class="section" aria-labelledby="cert-title">
+        <div class="container">
+          <h2 id="cert-title" class="section__title reveal">Certifications</h2>
+          <ul class="tags reveal">
+            <li>Problem Solving — Coach Academy</li>
+            <li>Web Development, Flutter, Network Training — Masa</li>
+            <li>Java GUI — Pixels</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section" aria-labelledby="contact-title">
+        <div class="container">
+          <h2 id="contact-title" class="section__title reveal">Contact</h2>
+          <div class="contact-grid">
+            <form class="card contact-form reveal" action="#" method="post" novalidate>
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="name">Name</label>
+                  <input id="name" name="name" type="text" placeholder="Your name" />
+                </div>
+                <div class="form-field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" placeholder="you@example.com" />
+                </div>
+              </div>
+              <div class="form-field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."></textarea>
+              </div>
+              <button class="btn btn--primary" type="submit">Send Message</button>
+              <p class="form-note">This form is a UI preview only.</p>
+            </form>
+
+            <aside class="card contact-info reveal">
+              <h3>Get in touch</h3>
+              <ul class="contact-list">
+                <li><strong>Email:</strong> <a href="mailto:oliveribrahim21@gmail.com">oliveribrahim21@gmail.com</a></li>
+                <li><strong>Phone:</strong> <a href="tel:01274792113">01274792113</a></li>
+                <li><strong>LinkedIn:</strong> <a target="_blank" rel="noopener" href="https://linkedin.com/in/oliver-ibrahim-61b5022b5">/in/oliver-ibrahim-61b5022b5</a></li>
+                <li><strong>GitHub:</strong> <a target="_blank" rel="noopener" href="https://github.com/oliveribrahim">github.com/oliveribrahim</a></li>
+                <li><strong>Languages:</strong> Arabic (Native), English (Very Good)</li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Oliver Ibrahim. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+  </html>
+
+
