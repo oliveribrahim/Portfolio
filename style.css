@@ -574,4 +574,27 @@ input:focus-visible, textarea:focus-visible, .btn:focus-visible, .social a:focus
   }
 }
 
+/* Circular Favicon Styling */
+/* Note: This creates a circular appearance for favicon in browsers that support it */
+link[rel="icon"]::before,
+link[rel="shortcut icon"]::before,
+link[rel="apple-touch-icon"]::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-image: url('oliver.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Alternative approach using CSS for circular favicon */
+.favicon-circular {
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  overflow: hidden !important;
+}
+
 
