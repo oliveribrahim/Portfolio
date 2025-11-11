@@ -1,63 +1,94 @@
 /*
-  Oliver Ibrahim — Portfolio Styles
-  - Modern, minimal, responsive
-  - Accent color: #007bff
+  ============================================================================
+  PORTFOLIO STYLESHEET
+  ============================================================================
+  Oliver Ibrahim — Portfolio Website Styles
+  - Modern, minimal, responsive design
+  - Primary accent color: #007bff (blue)
+  - Uses CSS custom properties (variables) for easy theming
+  - Mobile-first responsive approach
+  ============================================================================
 */
 
+/* ============================================================================
+   CSS CUSTOM PROPERTIES (VARIABLES)
+   ============================================================================
+   Centralized color scheme and design tokens for consistent styling
+   ============================================================================ */
 :root {
-  --bg: #ffffff;
-  --text: #0b0f14;
-  --muted: #5b6470;
-  --accent: #007bff;
-  --border: #e7ecf2;
-  --card: #f9fbfd;
-  --shadow: 0 10px 30px rgba(11, 15, 20, 0.06);
-  --radius: 14px;
-  --radius-sm: 10px;
+  --bg: #ffffff;                    /* Main background color (white) */
+  --text: #0b0f14;                  /* Primary text color (dark gray) */
+  --muted: #5b6470;                 /* Secondary/muted text color (medium gray) */
+  --accent: #007bff;                /* Primary accent color (blue) */
+  --border: #e7ecf2;                /* Border color (light gray) */
+  --card: #f9fbfd;                 /* Card background color (very light gray) */
+  --shadow: 0 10px 30px rgba(11, 15, 20, 0.06);  /* Default box shadow */
+  --radius: 14px;                   /* Default border radius for cards */
+  --radius-sm: 10px;                /* Small border radius for buttons/inputs */
 }
 
+/* ============================================================================
+   RESET & BASE STYLES
+   ============================================================================ */
+
+/* Box-sizing reset - ensures padding and border are included in element width */
 * {
   box-sizing: border-box;
 }
 
+/* Smooth scrolling for anchor links and scroll padding for fixed header */
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-behavior: smooth;          /* Smooth scroll animation */
+  scroll-padding-top: 80px;         /* Offset for fixed header when scrolling to anchors */
 }
 
+/* Base body styles - typography, colors, and layout */
 body {
   margin: 0;
   font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.6;                 /* Improved readability */
   scroll-behavior: smooth;
 }
 
+/* Image and SVG alignment */
 img, svg {
   display: inline-block;
   vertical-align: middle;
 }
 
+/* Link default styling - inherits text color, no underline */
 a {
   color: inherit;
   text-decoration: none;
 }
 
+/* ============================================================================
+   LAYOUT UTILITIES
+   ============================================================================ */
+
+/* Container - centers content with max-width and responsive padding */
 .container {
-  width: min(1100px, 92%);
-  margin: 0 auto;
+  width: min(1100px, 92%);          /* Max width 1100px, 92% on smaller screens */
+  margin: 0 auto;                   /* Center horizontally */
 }
 
+/* ============================================================================
+   ACCESSIBILITY - SKIP LINK
+   ============================================================================
+   Hidden by default, visible on focus for keyboard navigation users
+   ============================================================================ */
 .skip-link {
   position: absolute;
-  left: -9999px;
+  left: -9999px;                    /* Move off-screen */
   top: auto;
   width: 1px;
   height: 1px;
   overflow: hidden;
 }
 
+/* Show skip link when focused (keyboard navigation) */
 .skip-link:focus {
   position: fixed;
   left: 16px;
@@ -67,20 +98,25 @@ a {
   padding: 10px 14px;
   background: var(--text);
   color: #fff;
-  z-index: 1000;
+  z-index: 1000;                    /* Above all other content */
   border-radius: 8px;
 }
 
-/* Header */
+/* ============================================================================
+   HEADER & NAVIGATION
+   ============================================================================ */
+
+/* Sticky header - stays at top when scrolling */
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 999;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: saturate(180%) blur(12px);
+  z-index: 999;                     /* High z-index to stay above content */
+  background: rgba(255, 255, 255, 0.8);  /* Semi-transparent white */
+  backdrop-filter: saturate(180%) blur(12px);  /* Glassmorphism effect */
   border-bottom: 1px solid var(--border);
 }
 
+/* Header inner container - flexbox layout for logo and navigation */
 .header-inner {
   display: flex;
   align-items: center;
@@ -88,6 +124,7 @@ a {
   padding: 14px 0;
 }
 
+/* Logo styling - clickable link to home */
 .logo {
   display: inline-flex;
   align-items: center;
@@ -95,6 +132,7 @@ a {
   font-weight: 700;
 }
 
+/* Logo mark - circular badge with initials "OI" */
 .logo__mark {
   width: 36px;
   height: 36px;
@@ -107,10 +145,12 @@ a {
   letter-spacing: 0.5px;
 }
 
+/* Logo text - name next to logo mark */
 .logo__text {
   font-weight: 600;
 }
 
+/* Navigation menu - horizontal list */
 .site-nav ul {
   display: flex;
   align-items: center;
@@ -120,16 +160,19 @@ a {
   list-style: none;
 }
 
+/* Navigation links - muted color by default */
 .site-nav a {
   color: var(--muted);
   font-weight: 500;
 }
 
+/* Navigation links - accent color on hover/focus */
 .site-nav a:hover,
 .site-nav a:focus-visible {
   color: var(--accent);
 }
 
+/* Mobile navigation toggle button (hamburger menu) - hidden on desktop */
 .nav-toggle {
   display: none;
   width: 44px;
@@ -139,6 +182,7 @@ a {
   border-radius: 10px;
 }
 
+/* Hamburger menu bars - three horizontal lines */
 .nav-toggle__bar {
   display: block;
   width: 20px;
@@ -147,37 +191,51 @@ a {
   margin: 5px auto;
 }
 
-/* Hero */
+/* ============================================================================
+   HERO SECTION
+   ============================================================================
+   Introduction section with name, title, description, and call-to-action
+   ============================================================================ */
 .hero {
   padding: 24px 0 48px;
 }
 
+/* Hero grid - two column layout: content (left) and profile (right) */
 .hero__grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  grid-template-columns: 1.4fr 1fr;  /* Content takes more space than profile */
   gap: 40px;
 }
 
+/* Hero subtitle - professional title */
 .hero__subtitle {
   color: var(--muted);
   margin: 6px 0 14px;
 }
 
+/* Hero description - brief professional summary */
 .hero__desc {
   color: var(--muted);
-  max-width: 60ch;
+  max-width: 60ch;                   /* Optimal reading width */
 }
 
+/* Accent color class - highlights important text */
 .accent {
   color: var(--accent);
 }
 
+/* Call-to-action buttons container */
 .hero__cta {
   display: flex;
   gap: 12px;
   margin: 22px 0 16px;
 }
 
+/* ============================================================================
+   BUTTONS
+   ============================================================================ */
+
+/* Base button styles */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -190,6 +248,7 @@ a {
   transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
 }
 
+/* Primary button - main action button (blue) */
 .btn--primary {
   background: var(--accent);
   color: #fff;
@@ -197,18 +256,21 @@ a {
   border-color: transparent;
 }
 
+/* Primary button hover - slight lift and stronger shadow */
 .btn--primary:hover,
 .btn--primary:focus-visible {
   transform: translateY(-1px);
   box-shadow: 0 12px 24px rgba(0, 123, 255, 0.28);
 }
 
+/* Ghost button hover - accent color and lift */
 .btn--ghost:hover,
 .btn--ghost:focus-visible {
   color: var(--accent);
   transform: translateY(-1px);
 }
 
+/* CV download button - green gradient with shine effect */
 .btn--cv {
   background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
   color: #fff;
@@ -218,6 +280,7 @@ a {
   overflow: hidden;
 }
 
+/* Shine effect animation - sliding highlight on hover */
 .btn--cv::before {
   content: '';
   position: absolute;
@@ -229,10 +292,12 @@ a {
   transition: left 0.5s;
 }
 
+/* Shine effect - slides across button on hover */
 .btn--cv:hover::before {
   left: 100%;
 }
 
+/* CV button hover - darker gradient and lift */
 .btn--cv:hover,
 .btn--cv:focus-visible {
   transform: translateY(-1px);
@@ -240,6 +305,11 @@ a {
   background: linear-gradient(135deg, #218838 0%, #1ea085 100%);
 }
 
+/* ============================================================================
+   SOCIAL LINKS
+   ============================================================================ */
+
+/* Social media links container */
 .social {
   display: flex;
   gap: 12px;
@@ -248,6 +318,7 @@ a {
   list-style: none;
 }
 
+/* Social link buttons - square icons */
 .social a {
   display: grid;
   place-items: center;
@@ -260,6 +331,7 @@ a {
   transition: border-color .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
 }
 
+/* Social link hover - accent color, border, lift, and shadow */
 .social a:hover,
 .social a:focus-visible {
   color: var(--accent);
@@ -268,6 +340,11 @@ a {
   box-shadow: var(--shadow);
 }
 
+/* ============================================================================
+   META INFORMATION
+   ============================================================================ */
+
+/* Contact metadata list (location, phone, email, etc.) */
 .meta {
   margin: 0;
   padding: 0;
@@ -278,59 +355,77 @@ a {
 
 .meta a { color: var(--accent); }
 
-/* Profile Image */
+/* ============================================================================
+   PROFILE IMAGE
+   ============================================================================ */
+
+/* Circular profile image with animated rotating border */
 .profile-image {
   width: 200px;
   height: 200px;
   margin: 24px;
-  border-radius: 50%;
+  border-radius: 50%;                /* Perfect circle */
   overflow: hidden;
   border: 4px solid var(--accent);
   box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
   position: relative;
 }
 
+/* Animated rotating gradient border */
 .profile-image::before {
   content: '';
   position: absolute;
-  inset: -4px;
+  inset: -4px;                       /* Extends beyond image */
   border-radius: 50%;
   background: linear-gradient(45deg, var(--accent), #0056b3, #004085, var(--accent));
-  z-index: -1;
-  animation: rotate 3s linear infinite;
+  z-index: -1;                       /* Behind the image */
+  animation: rotate 3s linear infinite;  /* Continuous rotation */
 }
 
+/* Profile image - covers entire circle */
 .profile-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;                 /* Maintains aspect ratio, fills circle */
   transition: transform 0.3s ease;
 }
 
+/* Profile image hover - slight zoom effect */
 .profile-image:hover img {
   transform: scale(1.05);
 }
 
+/* Rotation animation for gradient border */
 @keyframes rotate {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
-/* Sections */
+/* ============================================================================
+   SECTIONS
+   ============================================================================ */
+
+/* Base section styling - vertical spacing */
 .section {
   padding: 16px 0;
 }
 
+/* Section title - main heading for each section */
 .section__title {
   margin: 0 0 18px;
 }
 
+/* Section lead paragraph - introductory text */
 .section__lead {
   color: var(--muted);
-  max-width: 70ch;
+  max-width: 70ch;                  /* Optimal reading width */
 }
 
-/* Cards & grids */
+/* ============================================================================
+   CARDS & GRIDS
+   ============================================================================ */
+
+/* Card component - reusable container with shadow and border */
 .card {
   background: var(--card);
   border: 1px solid var(--border);
@@ -339,12 +434,14 @@ a {
   box-shadow: var(--shadow);
 }
 
+/* Skills grid - 4 columns on desktop */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 }
 
+/* Tags and badges - pill-shaped labels for skills/technologies */
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -354,25 +451,32 @@ a {
   list-style: none;
 }
 
+/* Individual tag/badge styling - rounded pills */
 .tags li, .badge {
   background: #fff;
   border: 1px solid var(--border);
-  border-radius: 999px;
+  border-radius: 999px;             /* Fully rounded (pill shape) */
   padding: 6px 10px;
   font-size: 14px;
   color: var(--muted);
 }
 
-/* Timeline */
+/* ============================================================================
+   TIMELINE (EXPERIENCE SECTION)
+   ============================================================================ */
+
+/* Timeline container - vertical list of work experience */
 .timeline {
   display: grid;
   gap: 14px;
 }
 
+/* Individual timeline item (work experience entry) */
 .timeline__item {
   position: relative;
 }
 
+/* Timeline header - job title and date range */
 .timeline__header {
   display: flex;
   align-items: baseline;
@@ -380,15 +484,21 @@ a {
   gap: 8px;
 }
 
+/* Time period - date range styling */
 .time { color: var(--muted); font-size: 14px; }
 
-/* Projects */
+/* ============================================================================
+   PROJECTS SECTION
+   ============================================================================ */
+
+/* Projects grid - 3 columns on desktop */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
+/* Project card metadata - technology badges */
 .project-card__meta {
   display: flex;
   gap: 8px;
@@ -396,7 +506,11 @@ a {
   padding: 0 16px;
 }
 
-/* Vibrant project card for Omnifood */
+/* ============================================================================
+   PROJECT CARDS
+   ============================================================================ */
+
+/* Base project card - flex column layout */
 .project-card {
   position: relative;
   overflow: hidden;
@@ -405,6 +519,7 @@ a {
   flex-direction: column;
 }
 
+/* Vibrant project card - blue gradient background with special effects */
 .project-card--vibrant {
   background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 30%, #1d4ed8 70%, #1e40af 100%);
   color: #fff;
@@ -412,72 +527,93 @@ a {
   box-shadow: 0 20px 40px rgba(30, 58, 138, 0.3);
 }
 
+/* Badges on vibrant cards - semi-transparent white */
 .project-card--vibrant .badge {
   background: rgba(255,255,255,0.15);
   border-color: rgba(255,255,255,0.25);
   color: #fff;
 }
 
+/* Project card thumbnail - layered background with project image */
 .project-card__thumb {
   height: 350px;
   border-radius: 10px;
-  margin: -6px -6px 12px;
+  margin: -6px -6px 12px;           /* Negative margin to extend beyond card */
+  /* Multiple background layers for depth effect */
   background:
     linear-gradient(135deg, rgba(30, 58, 138, 0.4), rgba(59, 130, 246, 0.2)),
     radial-gradient(120px 80px at 20% 30%, rgba(255,255,255,0.15), transparent 60%),
     radial-gradient(120px 80px at 80% 20%, rgba(255,255,255,0.1), transparent 60%),
     radial-gradient(180px 120px at 60% 80%, rgba(255,255,255,0.12), transparent 60%),
-    var(--thumb-image, url('img/omnifood-logo.png'));
+    var(--thumb-image, url('img/omnifood-logo.png'));  /* Project image via CSS variable */
   background-size: cover, auto, auto, auto, contain;
   background-position: center, center, center, center, center;
   background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
-  filter: brightness(1.1) contrast(1.1) saturate(1.2);
+  filter: brightness(1.1) contrast(1.1) saturate(1.2);  /* Enhanced image appearance */
 }
 
+/* Project label - overlay badge on thumbnail */
 .project-card__label {
   position: absolute;
   left: 12px;
   bottom: 12px;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0,0,0,0.35);      /* Semi-transparent dark background */
   border: 1px solid rgba(255,255,255,0.35);
   color: #fff;
   padding: 6px 10px;
-  border-radius: 999px;
+  border-radius: 999px;               /* Pill shape */
   font-weight: 600;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);         /* Glassmorphism effect */
 }
 
-.project-card__body { padding: 8px 16px; position: relative; display: flex; flex-direction: column; height: 70%; }
+/* Project card body - content area with description and actions */
+.project-card__body { 
+  padding: 8px 16px; 
+  position: relative; 
+  display: flex; 
+  flex-direction: column; 
+  height: 70%; 
+}
+
 .project-card__title { margin: 0 0 6px; }
+
+/* Project description - slightly transparent for visual hierarchy */
 .project-card__desc { margin: 0 0 12px; opacity: .95;}
 
+/* Project card actions - buttons container at bottom */
 .project-card__actions { 
   display: flex; 
   gap: 8px; 
-  margin-top: auto; 
+  margin-top: auto;                   /* Push to bottom */
   padding-top: 12px;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255,255,255,0.1);  /* Subtle divider */
 }
 
-/* Fancy hover animations */
+/* ============================================================================
+   PROJECT CARD HOVER ANIMATIONS
+   ============================================================================ */
+
+/* Animated gradient overlays for hover effect */
 .project-card--vibrant::before,
 .project-card--vibrant::after {
   content: "";
   position: absolute;
-  inset: -30%;
+  inset: -30%;                       /* Extends beyond card */
   background: conic-gradient(from 0deg, rgba(255,255,255,0.12), rgba(255,255,255,0) 30%, rgba(255,255,255,0.12) 60%, rgba(255,255,255,0) 100%);
   transform: rotate(0deg);
   transition: transform 1.2s ease;
-  pointer-events: none;
+  pointer-events: none;              /* Doesn't interfere with clicks */
 }
 
+/* Blurred version for depth effect */
 .project-card--vibrant::after {
   inset: -60%;
   filter: blur(14px);
 }
 
+/* Rotate overlays on hover for dynamic effect */
 .project-card--vibrant:hover::before,
 .project-card--vibrant:focus-within::before {
   transform: rotate(30deg);
@@ -488,34 +624,44 @@ a {
   transform: rotate(-18deg);
 }
 
+/* Card lift effect on hover */
 .project-card--vibrant:hover,
 .project-card--vibrant:focus-within {
-  transform: translateY(-2px);
-  box-shadow: 0 25px 60px rgba(30, 58, 138, 0.4);
+  transform: translateY(-2px);     /* Slight lift */
+  box-shadow: 0 25px 60px rgba(30, 58, 138, 0.4);  /* Stronger shadow */
 }
 
+/* Thumbnail enhancement on hover - brighter and slightly zoomed */
 .project-card--vibrant:hover .project-card__thumb {
   filter: brightness(1.2) contrast(1.2) saturate(1.3);
   transform: scale(1.02);
 }
 
-/* Contact */
+/* ============================================================================
+   CONTACT SECTION
+   ============================================================================ */
+
+/* Contact grid - form (left) and info (right) */
 .contact-grid {
   display: grid;
-  grid-template-columns: 1.2fr .8fr;
+  grid-template-columns: 1.2fr .8fr;  /* Form takes more space */
   gap: 16px;
 }
 
+/* Form row - two columns for name and email */
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
 }
 
+/* Form field - label and input container */
 .form-field { display: grid; gap: 6px; }
 
+/* Form labels */
 label { font-weight: 600; }
 
+/* Form inputs and textarea */
 input, textarea {
   width: 100%;
   border: 1px solid var(--border);
@@ -526,33 +672,66 @@ input, textarea {
   color: var(--text);
 }
 
+/* Focus styles - blue outline for accessibility */
 input:focus-visible, textarea:focus-visible, .btn:focus-visible, .social a:focus-visible, .site-nav a:focus-visible {
   outline: 2px solid rgba(0, 123, 255, 0.4);
   outline-offset: 2px;
 }
 
+/* Form note - disclaimer text */
 .form-note { color: var(--muted); font-size: 14px; }
 
+/* Contact information list */
 .contact-list { list-style: none; padding: 0; margin: 0; }
 .contact-list li + li { margin-top: 8px; }
 
-/* Footer */
+/* ============================================================================
+   FOOTER
+   ============================================================================ */
+
+/* Site footer - copyright information */
 .site-footer {
   border-top: 1px solid var(--border);
   padding: 22px 0;
   color: var(--muted);
 }
 
-/* Reveal Animations */
-.reveal { opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; }
-.reveal.is-visible { opacity: 1; transform: none; }
+/* ============================================================================
+   REVEAL ANIMATIONS
+   ============================================================================
+   Scroll-triggered fade-in and slide-up animations
+   ============================================================================ */
 
-/* Responsive */
+/* Hidden by default - will be revealed when scrolled into view */
+.reveal { 
+  opacity: 0; 
+  transform: translateY(8px);       /* Slightly below final position */
+  transition: opacity .6s ease, transform .6s ease; 
+}
+
+/* Visible state - triggered by JavaScript when element enters viewport */
+.reveal.is-visible { 
+  opacity: 1; 
+  transform: none;                   /* Final position */
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN - TABLET (max-width: 980px)
+   ============================================================================ */
 @media (max-width: 980px) {
+  /* Skills grid - single column */
   .skills-grid { grid-template-columns: auto; }
+  
+  /* Projects grid - 2 columns */
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  
+  /* Hero grid - single column (stacked) */
   .hero__grid { grid-template-columns: 1fr; }
+  
+  /* Contact grid - single column */
   .contact-grid { grid-template-columns: 1fr; }
+  
+  /* Smaller profile image */
   .profile-image {
     width: 160px;
     height: 160px;
@@ -560,20 +739,49 @@ input:focus-visible, textarea:focus-visible, .btn:focus-visible, .social a:focus
   }
 }
 
+/* ============================================================================
+   RESPONSIVE DESIGN - MOBILE (max-width: 720px)
+   ============================================================================ */
 @media (max-width: 720px) {
-  .site-nav { position: fixed; inset: 64px 16px auto 16px; background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 12px; display: none; box-shadow: var(--shadow); }
+  /* Mobile navigation - fixed overlay menu */
+  .site-nav { 
+    position: fixed; 
+    inset: 64px 16px auto 16px;     /* Positioned below header */
+    background: #fff; 
+    border: 1px solid var(--border); 
+    border-radius: 12px; 
+    padding: 12px; 
+    display: none;                   /* Hidden by default */
+    box-shadow: var(--shadow); 
+  }
+  
+  /* Show navigation when toggled open */
   .site-nav.open { display: block; }
-  .site-nav ul { flex-direction: column; align-items: stretch; gap: 8px; }
+  
+  /* Vertical navigation menu */
+  .site-nav ul { 
+    flex-direction: column; 
+    align-items: stretch; 
+    gap: 8px; 
+  }
+  
+  /* Show hamburger menu button */
   .nav-toggle { display: inline-grid; place-items: center; }
+  
+  /* Form fields - single column */
   .form-row { grid-template-columns: 1fr; }
+  
+  /* Projects grid - single column */
   .projects-grid { grid-template-columns: 1fr; }
+  
+  /* Smaller profile image */
   .profile-image {
     width: 140px;
     height: 140px;
     margin-bottom: 16px;
   }
   
-  /* Mobile font size adjustments */
+  /* Mobile font size adjustments for better readability */
   h1 { font-size: 2rem; }
   h2 { font-size: 1.5rem; }
   h3 { font-size: 1.25rem; }
@@ -586,8 +794,11 @@ input:focus-visible, textarea:focus-visible, .btn:focus-visible, .social a:focus
   .contact-list { font-size: 0.9rem; }
 }
 
-/* Extra small mobile devices */
+/* ============================================================================
+   RESPONSIVE DESIGN - SMALL MOBILE (max-width: 480px)
+   ============================================================================ */
 @media (max-width: 480px) {
+  /* Further reduced font sizes for small screens */
   h1 { font-size: 1.75rem; }
   h2 { font-size: 1.35rem; }
   h3 { font-size: 1.15rem; }
@@ -602,8 +813,11 @@ input:focus-visible, textarea:focus-visible, .btn:focus-visible, .social a:focus
   .tags li, .badge{font-size: 0.8rem;}
 }
 
-/* Very small mobile devices (under 400px) */
+/* ============================================================================
+   RESPONSIVE DESIGN - VERY SMALL MOBILE (max-width: 400px)
+   ============================================================================ */
 @media (max-width: 400px) {
+  /* Minimum font sizes for very small devices */
   body { font-size: 12px; }
   h1 { font-size: 1.5rem; }
   h2 { font-size: 1.2rem; }
@@ -620,11 +834,15 @@ input:focus-visible, textarea:focus-visible, .btn:focus-visible, .social a:focus
   .site-nav a { font-size: 0.9rem; }
 }
 
-/* CSS */
+/* ============================================================================
+   FAVICON STYLING
+   ============================================================================ */
+
+/* Circular favicon styling for profile image icon */
 .favicon-circular {
-  width: 100px;              /* set the size you want */
+  width: 100px;                      /* Size of the favicon */
   height: 100px;
-  border-radius: 50%;        /* makes it circular */
-  object-fit: cover;         /* crops the image inside the circle */
-  overflow: hidden;          /* hides anything outside the circle */
+  border-radius: 50%;                /* Makes it circular */
+  object-fit: cover;                 /* Crops the image to fit the circle */
+  overflow: hidden;                  /* Hides anything outside the circle */
 }

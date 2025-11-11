@@ -1,39 +1,56 @@
 <!DOCTYPE html>
+<!-- 
+  Portfolio Website for Oliver Ibrahim
+  Full-Stack Web Developer Portfolio showcasing skills, experience, and projects
+-->
 <html lang="en">
   <head>
+    <!-- Character encoding and viewport settings for responsive design -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- SEO meta description for search engines -->
     <meta name="description" content="Portfolio of Oliver Ibrahim – Full-Stack Web Developer (Laravel, PHP, WordPress)">
     <title>Oliver Ibrahim | Portfolio</title>
+    
+    <!-- Preconnect to Google Fonts for faster font loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Inter font family with multiple weights for typography -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Favicon - Circular -->
+    <!-- Favicon - Circular profile image used as site icon -->
     <link rel="icon" type="image/svg+xml" href="with_bg2.png">
     <link rel="apple-touch-icon" href="with_bg2.png" class="favicon-circular">
     <link rel="shortcut icon" href="with_bg2.png" class="favicon-circular">
     <meta name="msapplication-TileImage" content="with_bg2.png" class="favicon-circular">
+    <!-- Theme color for mobile browsers -->
     <meta name="theme-color" content="#2563eb">
     
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <!-- Skip link for accessibility - allows keyboard users to skip navigation -->
     <a class="skip-link" href="#about" aria-label="Skip to content">Skip to content</a>
 
+    <!-- Site Header - Sticky navigation bar at the top -->
     <header class="site-header" id="top">
       <div class="container header-inner">
+        <!-- Logo - Clickable link to scroll to top -->
         <a href="#top" class="logo" aria-label="Oliver Ibrahim Home">
           <span class="logo__mark">OI</span>
           <span class="logo__text">Oliver Ibrahim</span>
         </a>
 
+        <!-- Mobile navigation toggle button (hamburger menu) -->
         <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Toggle navigation">
           <span class="nav-toggle__bar"></span>
           <span class="nav-toggle__bar"></span>
           <span class="nav-toggle__bar"></span>
         </button>
 
+        <!-- Primary navigation menu -->
         <nav id="siteNav" class="site-nav" aria-label="Primary">
           <ul>
             <li><a href="#about">About</a></li>
@@ -46,26 +63,33 @@
       </div>
     </header>
 
+    <!-- Main content area -->
     <main>
-      <!-- Hero / Intro -->
+      <!-- Hero / Introduction Section - First impression area with name, title, and call-to-action buttons -->
       <section class="hero" aria-labelledby="intro-title">
         <div class="container hero__grid">
+          <!-- Left side: Main content with introduction text and buttons -->
           <div class="hero__content reveal">
-            <h1 id="intro-title">Hi, I’m <span class="accent">Oliver Ibrahim</span></h1>
+            <!-- Main heading with name highlighted in accent color -->
+            <h1 id="intro-title">Hi, I'm <span class="accent">Oliver Ibrahim</span></h1>
+            <!-- Professional title and location -->
             <p class="hero__subtitle">Full-Stack Web Developer Intern — Cairo, Egypt</p>
+            <!-- Brief professional description -->
             <p class="hero__desc">
               Motivated developer with hands-on experience in Laravel, PHP, and WordPress. I focus on building
               responsive, secure, and user-friendly web applications, and I thrive in collaborative, learning-driven teams.
             </p>
+            <!-- Call-to-action buttons: View projects, Download CV, Contact -->
             <div class="hero__cta">
               <a class="btn btn--primary" href="#projects">View Projects</a>
               <a class="btn btn--cv" href="https://drive.google.com/file/d/1AdIh1_g8-jRtrJAbsgRcB79Ialvuj7tr/view?usp=drive_link" target="_blank" rel="noopener">Download CV</a>
               <a class="btn btn--ghost" href="#contact">Contact Me</a>
             </div>
+            <!-- Social media links: LinkedIn, GitHub, Email -->
             <ul class="social" aria-label="Social links">
               <li>
                 <a href="https://linkedin.com/in/oliver-ibrahim-61b5022b5" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                  <!-- LinkedIn Icon -->
+                  <!-- LinkedIn Icon SVG -->
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6C1.12 6 0 4.88 0 3.5C0 2.12 1.12 1 2.5 1C3.88 1 4.98 2.12 4.98 3.5Z" fill="currentColor"/>
                     <path d="M0.22 8.33997H4.78V22.0001H0.22V8.33997Z" fill="currentColor"/>
@@ -75,7 +99,7 @@
               </li>
               <li>
                 <a href="https://github.com/oliveribrahim" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                  <!-- GitHub Icon -->
+                  <!-- GitHub Icon SVG -->
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="M12 2C6.48 2 2 6.58 2 12.26C2 16.74 4.87 20.52 8.84 21.96C9.34 22.05 9.52 21.74 9.52 21.46C9.52 21.22 9.51 20.58 9.51 19.8C7 20.31 6.35 18.86 6.35 18.86C5.9 17.75 5.2 17.46 5.2 17.46C4.22 16.82 5.27 16.84 5.27 16.84C6.34 16.92 6.9 17.96 6.9 17.96C7.86 19.66 9.45 19.16 10.06 18.89C10.15 18.19 10.43 17.7 10.74 17.43C8.62 17.16 6.39 16.31 6.39 12.64C6.39 11.58 6.76 10.72 7.38 10.06C7.28 9.79 6.94 8.74 7.48 7.3C7.48 7.3 8.29 7.01 9.5 7.98C10.27 7.76 11.1 7.65 11.93 7.65C12.76 7.65 13.59 7.76 14.36 7.98C15.57 7.01 16.38 7.3 16.38 7.3C16.92 8.74 16.58 9.79 16.48 10.06C17.1 10.72 17.47 11.58 17.47 12.64C17.47 16.32 15.23 17.16 13.1 17.43C13.49 17.76 13.83 18.44 13.83 19.49C13.83 20.97 13.81 21.15 13.81 21.46C13.81 21.74 13.99 22.06 14.49 21.96C18.46 20.52 21.33 16.74 21.33 12.26C21.33 6.58 16.85 2 11.33 2H12Z" fill="currentColor"/>
                   </svg>
@@ -83,7 +107,7 @@
               </li>
               <li>
                 <a href="mailto:oliveribrahim21@gmail.com" aria-label="Email">
-                  <!-- Mail Icon -->
+                  <!-- Email/Mail Icon SVG -->
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2"/>
                     <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2"/>
@@ -92,10 +116,13 @@
               </li>
             </ul>
           </div>
+          <!-- Right side: Profile image and contact information -->
           <div class="hero__aside reveal">
+            <!-- Circular profile image with animated border -->
             <div class="profile-image">
               <img src="oliver.jpeg" alt="Oliver Ibrahim - Full-Stack Web Developer" />
             </div>
+            <!-- Contact metadata: Location, Phone, Email, Military Status -->
             <ul class="meta">
               <li><strong>Location:</strong> Cairo, Egypt</li>
               <li><strong>Phone:</strong> <a href="tel:01274792113">01274792113</a></li>
@@ -106,23 +133,26 @@
         </div>
       </section>
 
-      <!-- About -->
+      <!-- About Section - Personal introduction and professional summary -->
       <section id="about" class="section" aria-labelledby="about-title">
         <div class="container">
           <h2 id="about-title" class="section__title reveal">About</h2>
+          <!-- Lead paragraph describing professional background and approach -->
           <p class="section__lead reveal">
-            I’m a Full-Stack Web Developer Intern with a passion for creating responsive, secure, and
+            I'm a Full-Stack Web Developer Intern with a passion for creating responsive, secure, and
             user-friendly applications. With a foundation in Laravel, PHP, and WordPress, I continuously
             improve my skills while collaborating with teams to ship high-quality software.
           </p>
         </div>
       </section>
 
-      <!-- Skills -->
+      <!-- Skills Section - Technical skills organized by category -->
       <section id="skills" class="section" aria-labelledby="skills-title">
         <div class="container">
           <h2 id="skills-title" class="section__title reveal">Skills</h2>
+          <!-- Grid layout displaying skills in categorized cards -->
           <div class="skills-grid reveal">
+            <!-- Programming languages card -->
             <div class="card">
               <h3>Languages</h3>
               <ul class="tags">
@@ -135,6 +165,7 @@
                 <li>Dart</li>
               </ul>
             </div>
+            <!-- Frameworks and development tools card -->
             <div class="card">
               <h3>Frameworks & Tools</h3>
               <ul class="tags">
@@ -146,6 +177,7 @@
                 <li>Git & GitHub</li>
               </ul>
             </div>
+            <!-- Database technologies card -->
             <div class="card">
               <h3>Databases</h3>
               <ul class="tags">
@@ -153,6 +185,7 @@
                 <li>Firebase</li>
               </ul>
             </div>
+            <!-- Design and methodology concepts card -->
             <div class="card">
               <h3>Concepts & Design</h3>
               <ul class="tags">
@@ -167,11 +200,13 @@
         </div>
       </section>
 
-      <!-- Experience -->
+      <!-- Experience Section - Work history in chronological order (most recent first) -->
       <section id="experience" class="section" aria-labelledby="exp-title">
         <div class="container">
           <h2 id="exp-title" class="section__title reveal">Experience</h2>
+          <!-- Timeline layout for work experience entries -->
           <div class="timeline">
+            <!-- Current position: Web Developer Intern at X-TND -->
             <article class="timeline__item reveal">
               <header class="timeline__header">
                 <h3>Web Developer Intern — X-TND</h3>
@@ -183,7 +218,7 @@
               </ul>
             </article>
 
-
+            <!-- Previous position: Application Support at Cyrus Technology -->
             <article class="timeline__item reveal">
               <header class="timeline__header">
                 <h3>Application Support — Cyrus Technology</h3>
@@ -194,6 +229,7 @@
               </ul>
             </article>
 
+            <!-- Previous position: IT Support & Graphic Designer at Pixel Led -->
             <article class="timeline__item reveal">
               <header class="timeline__header">
                 <h3>IT Support & Graphic Designer — Pixel Led</h3>
@@ -205,6 +241,7 @@
               </ul>
             </article>
 
+            <!-- Previous position: Sales Representative at MA Group -->
             <article class="timeline__item reveal">
               <header class="timeline__header">
                 <h3>Sales Representative — MA Group</h3>
@@ -218,35 +255,43 @@
         </div>
       </section>
 
-      <!-- Education -->
+      <!-- Education Section - Academic background and graduation project -->
       <section id="education" class="section" aria-labelledby="edu-title">
         <div class="container">
           <h2 id="edu-title" class="section__title reveal">Education</h2>
+          <!-- Education card with degree information -->
           <div class="card reveal">
             <h3>B.Sc. in Computer Science — Thebes Academy</h3>
             <p>Graduated 2023, Grade: B</p>
+            <!-- Graduation project details with technologies used -->
             <p><strong>Graduation Project:</strong> Mobile App for Visually Impaired Users (Dart, Flutter, Firebase, Figma, GitHub).</p>
           </div>
         </div>
       </section>
 
 
-      <!-- Projects -->
+      <!-- Projects Section - Portfolio showcase of completed web projects -->
       <section id="projects" class="section" aria-labelledby="projects-title">
         <div class="container">
           <h2 id="projects-title" class="section__title reveal">Projects</h2>
+          <!-- Grid layout for project cards with live and GitHub links -->
           <div class="projects-grid" aria-live="polite">
+            <!-- Project 1: Omnifood - Food ordering web application -->
             <article class="project-card project-card--vibrant reveal">
+              <!-- Project thumbnail image with label overlay -->
               <div class="project-card__thumb" aria-hidden="true" style="--thumb-image: url('omnifood.png')">
                 <span class="project-card__label">Omnifood</span>
               </div>
+              <!-- Project details: description, technologies, and action buttons -->
               <div class="project-card__body">
                 <p class="project-card__desc">Omnifood is a modern web application designed for food lovers and restaurants. The project provides an easy, fast, and user-friendly way for customers to browse meals, add them to their cart, and place orders online.</p>
+                <!-- Technology badges used in the project -->
                 <div class="project-card__meta">
                   <span class="badge">HTML</span>
                   <span class="badge">CSS</span>
                   <span class="badge">JavaScript</span>
                 </div>
+                <!-- Action buttons: Live demo and GitHub repository links -->
                 <div class="project-card__actions">
                   <a class="btn btn--primary" target="_blank" rel="noopener" href="https://omnifood-oliver10.netlify.app/">Live</a>
                   <a class="btn btn--ghost" target="_blank" rel="noopener" href="https://github.com/oliveribrahim/Omnifood">GitHub</a>
@@ -254,6 +299,7 @@
               </div>
             </article>
             
+            <!-- Project 2: E-Street - Editorial/news website -->
             <article class="project-card project-card--vibrant reveal">
               <div class="project-card__thumb" aria-hidden="true" style="--thumb-image: url('es.png'); background-size: auto; background-position: center; background-repeat: repeat;">
                 <span class="project-card__label">E-Street</span>
@@ -272,6 +318,7 @@
               </div>
             </article>
             
+            <!-- Project 3: Natours - Nature tours landing page -->
             <article class="project-card project-card--vibrant reveal">
               <div class="project-card__thumb" aria-hidden="true" style="--thumb-image: url('img/natours.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
                 <span class="project-card__label">Natours</span>
@@ -289,14 +336,77 @@
                 </div>
               </div>
             </article>
+
+            <!-- Project 4: Multi-List To-Do - Task management application -->
+            <article class="project-card project-card--vibrant reveal">
+              <div class="project-card__thumb" aria-hidden="true" style="--thumb-image: url('tl.png'); background-size: auto; background-position: center; background-repeat: repeat;">
+                <span class="project-card__label">Multi-List To-Do</span>
+              </div>
+              <div class="project-card__body">
+                <p class="project-card__desc">A multi-list to-do system lets you organize tasks into separate lists, each focused on a different goal, project, or topic.
+                  Instead of one long messy list, you create multiple smaller lists — each one clear and focused.</p>
+                <div class="project-card__meta">
+                  <span class="badge">HTML</span>
+                  <span class="badge">CSS</span>
+                  <span class="badge">Tailwind</span>
+                  <span class="badge">JavaScript</span>
+                </div>
+                <div class="project-card__actions">
+                  <a class="btn btn--primary" target="_blank" rel="noopener" href="https://todosslistss.netlify.app/">Live</a>
+                  <a class="btn btn--ghost" target="_blank" rel="noopener" href="https://github.com/oliveribrahim/Todo-List">GitHub</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 5: My Wallet (محفظتي) - Personal finance tracking app in Arabic -->
+            <article class="project-card project-card--vibrant reveal">
+              <div class="project-card__thumb" aria-hidden="true" style="--thumb-image: url('ma7fzty.png'); background-size: auto; background-position: center; background-repeat: repeat;">
+                <span class="project-card__label">My Wallet</span>
+              </div>
+              <div class="project-card__body">
+                <p class="project-card__desc">"محفظتي" (My Wallet) is a simple personal finance web app designed to help you track your income, expenses, and current balance — all in Arabic. It lets you record every transaction with a note to remember why you spent or received money, such as "مرتب" (salary), "أكل" (food), or "مواصلات" (transport).</p>
+                <div class="project-card__meta">
+                  <span class="badge">HTML</span>
+                  <span class="badge">CSS</span>
+                  <span class="badge">Tailwind</span>
+                  <span class="badge">JavaScript</span>
+                </div>
+                <div class="project-card__actions">
+                  <a class="btn btn--primary" target="_blank" rel="noopener" href="https://m7fazty.netlify.app/">Live</a>
+                  <a class="btn btn--ghost" target="_blank" rel="noopener" href="https://github.com/oliveribrahim/My-wallet">GitHub</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 6: Forkify - Recipe application and educational front-end project -->
+            <article class="project-card project-card--vibrant reveal">
+              <div class="project-card__thumb" aria-hidden="true" style="--thumb-image: url('images.jpeg'); background-size: auto; background-position: center; background-repeat: repeat;">
+                <span class="project-card__label">Forkify</span>
+              </div>
+              <div class="project-card__body">
+                <p class="project-card__desc">Forkify serves as both a functional recipe application and an educational project for mastering real-world front-end development. It demonstrates how to structure, scale, and maintain modern JavaScript applications while delivering a smooth and responsive user interface</p>
+                <div class="project-card__meta">
+                  <span class="badge">HTML</span>
+                  <span class="badge">CSS</span>
+                  <span class="badge">Sass</span>
+                  <span class="badge">JavaScript</span>
+                </div>
+                <div class="project-card__actions">
+                  <a class="btn btn--primary" target="_blank" rel="noopener" href="https://forkify-xtnd.netlify.app/">Live</a>
+                  <a class="btn btn--ghost" target="_blank" rel="noopener" href="https://github.com/oliveribrahim/Forkify">GitHub</a>
+                </div>
+              </div>
+            </article>
+            
           </div>
         </div>
       </section>
 
-      <!-- Certifications -->
+      <!-- Certifications Section - Professional certifications and training -->
       <section id="certifications" class="section" aria-labelledby="cert-title">
         <div class="container">
           <h2 id="cert-title" class="section__title reveal">Certifications</h2>
+          <!-- List of certifications with issuing organizations -->
           <ul class="tags reveal">
             <li>Problem Solving — Coach Academy</li>
             <li>Web Development, Flutter, Network Training — Masa</li>
@@ -305,12 +415,15 @@
         </div>
       </section>
 
-      <!-- Contact -->
+      <!-- Contact Section - Contact form and contact information -->
       <section id="contact" class="section" aria-labelledby="contact-title">
         <div class="container">
           <h2 id="contact-title" class="section__title reveal">Contact</h2>
+          <!-- Two-column layout: contact form on left, contact info on right -->
           <div class="contact-grid">
+            <!-- Contact form (currently UI preview only, no backend functionality) -->
             <form class="card contact-form reveal" action="#" method="post" novalidate>
+              <!-- Name and Email fields in a row -->
               <div class="form-row">
                 <div class="form-field">
                   <label for="name">Name</label>
@@ -321,16 +434,21 @@
                   <input id="email" name="email" type="email" placeholder="you@example.com" />
                 </div>
               </div>
+              <!-- Message textarea -->
               <div class="form-field">
                 <label for="message">Message</label>
                 <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."></textarea>
               </div>
+              <!-- Submit button -->
               <button class="btn btn--primary" type="submit">Send Message</button>
+              <!-- Note indicating form is for display purposes only -->
               <p class="form-note">This form is a UI preview only.</p>
             </form>
 
+            <!-- Contact information sidebar -->
             <aside class="card contact-info reveal">
               <h3>Get in touch</h3>
+              <!-- List of contact methods and social links -->
               <ul class="contact-list">
                 <li><strong>Email:</strong> <a href="mailto:oliveribrahim21@gmail.com">oliveribrahim21@gmail.com</a></li>
                 <li><strong>Phone:</strong> <a href="tel:01274792113">01274792113</a></li>
@@ -344,12 +462,15 @@
       </section>
     </main>
 
+    <!-- Site Footer - Copyright information with dynamic year -->
     <footer class="site-footer">
       <div class="container">
+        <!-- Copyright text with year updated via JavaScript -->
         <p>© <span id="year"></span> Oliver Ibrahim. All rights reserved.</p>
       </div>
     </footer>
 
+    <!-- JavaScript file for interactive functionality -->
     <script src="./script.js"></script>
   </body>
   </html>
